@@ -43,11 +43,6 @@ JourniStay - Book Unique Homes and Experiences
 
 ---
 
-## ▶️ How to Run Locally
 
-1. Clone the repository:
-```bash
-git clone https://github.com/yogeshshinde90/journiStay.git
-cd journiStay/journiStay
 
 
