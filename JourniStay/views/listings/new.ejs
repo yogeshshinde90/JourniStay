@@ -1,27 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JourniStay</title>
-</head>
-<body>
-    <form method="POST"  action="/listings">
-        <h3>Create a New listing</h3>
-        <input name="listing[title]" placeholder="Enter title" type="text">
-        <br> <br>
-        <textarea name="listing[description]" placeholder="Enter description" type="text"></textarea>
-        <br><br>
-        <input name="listing[image]" placeholder="Enter image Url/Link" type="text">
-        <br><br>
-        <input name="listing[price]" placeholder="Enter price " type="number">
-        <br><br>
-        <input name="listing[location]" placeholder="Enter location" type="text">
-        <br><br>
-        <input name="listing[country]" placeholder="Enter country" type="text">
-        <br><br>
-        <button>Add</button>
+
+
+<% layout("/layouts/boilerplate") %>
+
+
+<div class="container">
+<div class="row w-full">
+    <div class="col-8 offset-2">
+        <br>
+
+     <h3>Create a New listing</h3>
+    <form method="POST"  action="/listings" class="needs-validation" novalidate>
+        <div>
+        <label for="title" class="form-class">Title</label>
+        <input
+         name="listing[title]"
+         placeholder="Enter title"
+         type="text" 
+         class="form-control"
+         required>
+
+         <div class="valid-feedback">Title looks good!</div>
+        </div>
+        <br> 
+
+        <div>
+         <label for="description" class="form-class">Description</label>
+         <textarea name="listing[description]"
+         placeholder="Enter description"
+         type="text"
+         class="form-control"
+         required
+        ></textarea>
+        <div class="invalid-feedback">Please enter Description</div>
+        </div>
+
+        <br>
+        <div>
+        <label for="image" class="form-class">Image Link</label>
+        <input name="listing[image]"
+         placeholder="Enter image Url/Link"
+         type="text"
+         class="form-control" >
+        </div>
+
+        <br>
+        <div class="row">
+        <div class="col-md-4">
+        <label for="price" class="form-class">Price</label>
+        <input name="listing[price]" 
+        placeholder="Enter price " 
+        type="number"
+        class="form-control"
+        required>
+        <div class="invalid-feedback">Please enter valid price</div>
+        </div>
+
+        <br>
+        <div class="col-md-8">
+        <label for="location" class="form-class">Location</label>
+        <input name="listing[location]"
+         placeholder="Enter location"
+         type="text"
+         class="form-control"
+         required>
+        <div class="invalid-feedback">Please enter valid location</div>
+         </div>
+         </div>
+        <br>
+        
+        <div>
+        <label for="country" class="form-class">Country</label>
+        <input name="listing[country]"
+         placeholder="Enter country"
+          type="text"
+          class="form-control"
+          required>
+        <div class="invalid-feedback">Please enter valid country</div>
+          </div>
+        <br>
+        <button class="btn btn-dark add-btn" >Add</button>
 
     </form>
-</body>
-</html>
+
+    </div>
+
+</div>   
+</div> 
+
