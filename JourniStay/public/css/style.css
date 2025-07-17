@@ -4,9 +4,13 @@ body{
   font-family: "Plus Jakarta Sans", sans-serif !important;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;;
+  margin: 0;
 }
 
+main{
+    flex:1;
+    min-height: 75vh;
+}
 
 
 .navbar{
@@ -42,8 +46,7 @@ body{
     justify-content: center;
     align-items:space-evenly;
     width: 100% !important;
-    bottom: 0 !important;
-    position: sticky !important;
+    margin-top: auto;
     
 }
 
@@ -68,6 +71,11 @@ body{
 .card{
     margin-bottom: 2rem;
     border: none !important;
+    background-color: white;
+}
+
+.review-card{
+    border: 0.05rem solid black!important;
 }
 
 .card-img-top{
@@ -75,6 +83,8 @@ body{
     border-radius: 1rem !important;
     object-fit: cover !important;
 }
+
+
 
 .card-body{
     padding: 0 !important;
@@ -91,12 +101,14 @@ body{
 }
 
 .card-img-overlay{
-    opacity: 0;
+    background-color: white !important;
+    opacity: 0 !important;
+    z-index: 1;
 }
 
 .card-img-overlay:hover{
-    opacity: 0.2;
-    background-color: white;
+    opacity: 0.2 !important;
+    z-index: 2;
 }
 
 .listing-link:hover{

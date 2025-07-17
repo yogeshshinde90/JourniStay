@@ -24,8 +24,8 @@ const listingSchema = new Schema({
     },
    
     image : {
-        filename :  String,
-        url:String,
+        url: String,
+        filename : String,
 
     },
 
