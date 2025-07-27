@@ -13,17 +13,19 @@ const listings = require("./routes/listing.js");
 const reviews = require("./routes/review.js");
 const user = require("./routes/user.js");
 const session = require("express-session");
+const MongoDBStore = require("connect-mongo");
 const flash = require("connect-flash");
 const passport = require("passport");
 const localStrategy = require("passport-local");
 const User = require("./models/user.js");
+const dburl = process.env.ATLASDB_URL;
 
 
 const port = 8080;
 
 // Database connection
 async function main() {
-    await mongoose.connect("mongodb://localhost:27017/JourniStay");
+    await mongoose.connect(dburl);
 }
 main()
     .then(() => console.log("✅ Connected to MongoDB"))
@@ -37,6 +39,19 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
 
+const store = MongoDBStore.create({
+    mongoUrl: dburl,
+    crypto: {
+        secret: "mysupersecretcode"
+    },
+    touchAfter: 24 * 3600 
+});
+
+store.on("error", (e) => {
+    console.log("error in mongo session store", e);  
+});
+
+
 const sessionOptions = {
     secret : "mysupersecretcode",
     resave : false,
@@ -49,9 +64,6 @@ const sessionOptions = {
 };
 //Root
 
-app.get("/", (req, res) => {
-    res.send("✅ Root Route Working");
-});
 
 app.use(session(sessionOptions));
 app.use(flash());

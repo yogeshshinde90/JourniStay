@@ -26,13 +26,13 @@ router.get("/new", isLoggedIn, listingController.renderNewForm);
 router
 .route("/:id")
 .get(isLoggedIn, wrapasync(listingController.showListings))
-.put(isLoggedIn,isOwnwer,validateListing, wrapasync(listingController.updatelistings))
+.put(isLoggedIn,isOwnwer,isOwnwer,upload.single("listing[image]"),validateListing, wrapasync(listingController.updatelistings))
 .delete(isLoggedIn,isOwnwer,
      wrapasync(listingController.destroylistings));
 
 
 // Edit
-router.get("/:id/edit", isLoggedIn,isOwnwer, wrapasync(listingController.editlistings));
+router.get("/:id/edit", isLoggedIn,validateListing, wrapasync(listingController.editlistings));
 
 
 module.exports = router;

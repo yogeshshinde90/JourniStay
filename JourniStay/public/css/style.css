@@ -12,6 +12,10 @@ main{
     min-height: 75vh;
 }
 
+.listings{
+
+}
+
 
 .navbar{
     height : 5rem;
@@ -143,3 +147,24 @@ main{
    background-color: #fe424d !important;
    border: none !important;
 }
+
+.image1 img{
+    height:250px;
+    width:400px;
+    object-fit:cover;
+}
+
+
+#map{
+    width:80vh;
+    height:400px;
+}
+
+.tab-containar{
+    margin-left: 50px;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+}
+

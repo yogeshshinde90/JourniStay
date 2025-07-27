@@ -2,15 +2,112 @@
 <% layout("layouts/boilerplate") %>
 
 <body>
-    <h3>All Listings</h3>
 
-    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+    <style>
+        #filters{
+            display:flex;
+            flex-wrap: wrap;
+            text-align: center;
+            align-items: center;
+        }
+        .filter {
+            margin-left: 2rem;
+            margin-top: 2rem;
+            opacity: 0.8;
+        }
+
+        .filter:hover {
+            opacity: 1;
+            cursor: pointer;
+
+        }
+
+        .tax-info{
+            display: none ;
+        }
+
+        .tax-toggle{
+            border: 1px solid black;
+            border-radius: 1rem;
+            height: 3rem;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            padding-right: none !important;
+            width:300px;
+            margin-left:  4rem;
+        }
+
+        .form-switch label{
+            margin: none !important;
+        }
+
+        .form-check-input{
+            margin-left: 0.1rem !important;
+        }
+    </style>
+   <div id="filters">
+    <div class="filter">
+        <div><i class="fa-solid fa-fire"></i></div>
+        <p> Trending</p> 
+    </div>
+
+    <div class="filter">
+        <div><i class="fa-solid fa-bed"></i></div>
+        <p> Rooms</p> 
+    </div>
+
+    <div class="filter">
+        <div><i class="fa-solid fa-mountain-city"></i></div>
+        <p> Iconic Cities</p> 
+    </div>
+
+    <div class="filter">
+        <div><i class="fa-solid fa-mountain"></i></div>
+        <p> Mountains </p> 
+    </div>
+
+    <div class="filter">
+        <div><i class="fa-brands fa-fort-awesome"></i></div>
+        <p> castles</p> 
+    </div>
+
+    <div class="filter">
+        <div><i class="fa-regular fa-snowflake"></i></div>
+        <p> Aratic</p> 
+    </div>
+
+    <div class="filter">
+        <div><i class="fa-solid fa-bed"></i></div>
+        <p> Trending</p> 
+    </div>
+
+    <div class="filter">
+        <div><i class="fa-solid fa-cow"></i></div>
+        <p> Farms</p> 
+    </div>
+
+    <div class="filter">
+        <div><i class="fa-solid fa-campground"></i></div>
+        <p> Camping</p> 
+    </div>
+   
+
+    <div class="tax-toggle">
+    <div class="form-check-reverse form-switch ">
+ 
+  <label class=" form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
+   <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+   </div>
+   </div>
+   </div>
+
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
         <% for (let listing of alllistings) { %>
             <% if (listing && listing._id) { %>
                 <div class="col mb-4">
                     <a href="/listings/<%= listing._id %>" class="listing-link" style="text-decoration: none;">
                         <div class="card">
-                            <img src="<%= listing.image.url || "/images/defaultimg.avif" %>"
+                            <img src="<%= listing.image.url %>"
                                  class="card-img-top"
                                  alt="listing_image"
                                  style="height: 20rem;" />
@@ -18,6 +115,7 @@
                                 <p class="card-text">
                                     <b><%= listing.title %></b><br>
                                     ₹ <%= listing.price?.toLocaleString("en-IN") || "0" %> / night
+                                    <i class="tax-info"> &nbsp; &nbsp; +18 GST</i>
                                 </p>
                             </div>
                         </div>
@@ -27,3 +125,17 @@
         <% } %>
     </div>
 </body>
+
+<script>
+    let taxSwitch = document.getElementById("flexSwitchCheckDefault");
+    taxSwitch.addEventListener("click", () => {
+        let taxInfo = document.getElementsByClassName("tax-info");
+        for(info of taxInfo){
+            if(info.style.display != "inline"){
+                info.style.display = "inline";
+            }else{
+                info.style.display = "none";
+            }
+        }   
+    })
+</script>
