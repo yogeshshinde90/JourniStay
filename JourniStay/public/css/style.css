@@ -86,6 +86,7 @@ main{
     width: 100% !important;
     border-radius: 1rem !important;
     object-fit: cover !important;
+    height: 100% !important;
 }
 
 
