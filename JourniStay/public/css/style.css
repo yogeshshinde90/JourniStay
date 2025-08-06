@@ -172,7 +172,7 @@ main{
 
 
         #filters{
-            display:block;
+            display:flex;
             flex-wrap: wrap;
             text-align: center;
             align-items: center;
@@ -215,11 +215,13 @@ main{
 
         .row{
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: center;
     }
-
+       .row .card{
+        flex: 0 0 30%;
+       }
     
     
 
