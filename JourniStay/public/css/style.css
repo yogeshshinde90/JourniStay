@@ -219,19 +219,18 @@ main{
         align-items: center;
         justify-content: center;
     }
-       .row .card{
-        flex: 0 0 30%;
-       }
+    
     
     
 
-@media(max-width: 700px){
+@media(max-width: 550px){
     .filters div:nth-child(n+4) {
         display: none;
     }
     
     .row .card{
-       flex: 0 0 100%
+       margin: auto;
+         width: 90% !important;
         
     }
     
