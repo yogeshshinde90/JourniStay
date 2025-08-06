@@ -172,10 +172,10 @@ main{
 
 
         #filters{
-            display:flex;
-            flex-wrap: wrap;
-            text-align: center;
-            align-items: center;
+            display:flex !important;
+            flex-wrap: wrap !important;
+            text-align: center !important;
+            align-items: center !important;
         }
         .filter {
             margin-left: 2rem;
