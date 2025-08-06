@@ -175,7 +175,8 @@ main{
             display:flex !important;
             flex-wrap: wrap !important;
             text-align: center !important;
-            align-items: center !important;
+            align-items: center !important
+            ;
         }
         .filter {
             margin-left: 2rem;
