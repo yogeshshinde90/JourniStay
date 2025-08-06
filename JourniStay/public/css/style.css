@@ -223,19 +223,8 @@ main{
     
     
 
-@media(max-width: 550px){
-    .filters div:nth-child(n+4) {
-        display: none;
-    }
-    
-    .row .card{
-       margin: auto;
-         width: 90% !important;
-        
-    }
-    
 
 
-}
+
 
 
