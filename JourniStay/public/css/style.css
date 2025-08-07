@@ -172,11 +172,11 @@ main{
 
 
         #filters{
-            display:flex !important;
-            flex-wrap: wrap !important;
-            text-align: center !important;
-            align-items: center !important
-            ;
+            display:flex ;
+            flex-wrap: wrap ;
+            text-align: center ;
+            align-items: center;
+            
         }
         .filter {
             margin-left: 2rem;
@@ -220,7 +220,29 @@ main{
         align-items: center;
         justify-content: center;
     }
-    
+
+    .filter {
+  text-align: center;
+  padding: 10px;
+  background-color: lightgray;
+  border: 1px solid #ccc;
+}
+
+
+@media (min-width: 576px) {
+  .filter{
+    width: 12.5%; 
+  }
+}
+
+
+@media (max-width: 575.98px) {
+  .filter {
+    width: 33.33%; 
+  }
+}
+
+
     
     
 
