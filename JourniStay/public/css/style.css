@@ -171,25 +171,7 @@ main{
 
 
 
-        /* #filters{
-            display:flex ;
-            flex-wrap: wrap ;
-            text-align: center ;
-            align-items: center;
-            
-        }
-        .filter {
-            margin-left: 2rem;
-            margin-top: 2rem;
-            opacity: 0.8;
-        }
-
-        .filter:hover {
-            opacity: 1;
-            cursor: pointer;
-
-        } */
-
+       
         .tax-info{
             display: none ;
         }
@@ -221,19 +203,17 @@ main{
         justify-content: center;
     }
 
-    
+
 
     .filter {
   text-align: center;
   padding: 10px;
-  background-color: lightgray;
-  border: 1px solid #ccc;
 }
 
 
 @media (min-width: 576px) {
   .filter{
-    width: 12.5%; 
+    width: 11%; 
   }
 }
 
