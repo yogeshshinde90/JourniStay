@@ -175,7 +175,7 @@ main{
         .tax-info{
             display: none ;
         }
-
+        
         .tax-toggle{
             border: 1px solid black;
             border-radius: 1rem;
@@ -185,6 +185,7 @@ main{
             padding-right: none !important;
             width:300px;
             margin-left:  4rem;
+            margin-top: 1rem;
         }
 
         .form-switch label{
